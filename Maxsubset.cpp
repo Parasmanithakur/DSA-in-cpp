@@ -31,7 +31,7 @@ int main()
     sumArr.push_back(sum);
    for(int i=1;i+k-1<n;i++)
    {
-        sum=sum-arr[i-1]+arr[i+k-1];
+        sum=sum-arr[i-1]+arr[i+k-1];//o(n) soln is the best ,naive sol would be of o(n*K)
         sumArr.push_back(sum);
 
       
