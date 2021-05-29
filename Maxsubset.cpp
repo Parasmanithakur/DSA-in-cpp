@@ -7,6 +7,41 @@
 
 using namespace std;
 
+int maxubset(vector<int>arr,int n,int k) // 2 pointer method
+{
+
+    int i,j;
+    i=j=0;
+    int sum=0;
+    vector<int>sumArr;
+    int max;
+    for(j=0;j<n;j++)
+    {
+        if(j<k)
+         { sum+=arr[j];
+         }
+         
+         else{
+             sumArr.push_back(sum);
+             sum=sum-arr[i]+arr[j];
+             i++;
+         }
+         
+  }
+  sumArr.push_back(sum);
+   for(int i =0;i<sumArr.size();i++)
+
+     cout<<sumArr[i]<< " ";
+     cout<<endl;
+   
+
+
+  return    *max_element(sumArr.begin(),sumArr.end());
+
+
+
+
+}
 int main()
 {
    vector<int> arr,sumArr;
@@ -19,7 +54,7 @@ int main()
        cin>>x;
        arr.push_back(x);
    }
-   cout<<"total 1 index"<<i;
+ 
    int k;
    cin>>k;
    int sum=0;
@@ -31,7 +66,7 @@ int main()
     sumArr.push_back(sum);
    for(int i=1;i+k-1<n;i++)
    {
-        sum=sum-arr[i-1]+arr[i+k-1];//o(n) soln is the best ,naive sol would be of o(n*K)
+        sum=sum-arr[i-1]+arr[i+k-1];
         sumArr.push_back(sum);
 
       
@@ -43,8 +78,8 @@ int main()
      cout<<sumArr[i]<< " ";
      cout<<endl;
    
-    cout<<*max_element(sumArr.begin(),sumArr.end());
-
+    cout<<*max_element(sumArr.begin(),sumArr.end())<<endl;
+    cout<<maxubset(arr,n,k);
    
 
 
