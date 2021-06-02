@@ -20,7 +20,7 @@ void Neg(vector<int>arr,int n,int k) // 2 pointer method
     {
         
         if(arr[j]<0 )
-         { q.push_back(arr[j]);
+         { q.push_back(arr[j]); // pushing all negative numbers 
              
               }
   
@@ -33,7 +33,7 @@ void Neg(vector<int>arr,int n,int k) // 2 pointer method
          if(j-i+1==k)
             {
                 
-                if(!q.empty())
+                if(!q.empty()) // checking if deque is empty
                  {
                       int neg=q.front();
 
@@ -41,7 +41,7 @@ void Neg(vector<int>arr,int n,int k) // 2 pointer method
                  }
                  else 
                   cout<<0;
-                  if(arr[i]<0 )
+                  if(arr[i]<0 )  // poping the number no longer in sub array
                   {
                      q.pop_front();
                    }
@@ -68,7 +68,7 @@ void Neg(vector<int>arr,int n,int k) // 2 pointer method
 
 
 
-vector<int> bforce(vector<int> arr,int n,int k)
+vector<int> bforce(vector<int> arr,int n,int k)  //brute force method just to check
 {
     int flag=0;
     vector<int> Final;
@@ -95,7 +95,7 @@ vector<int> bforce(vector<int> arr,int n,int k)
 int main()
 {
    vector<int> arr,sumArr;
-   int n,k;
+   int n,k;// n= size of array and K is length of subarray
    cin>>n;
    int i;
    for( i=0;i<n;i++)
