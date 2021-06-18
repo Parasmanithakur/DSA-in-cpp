@@ -1,3 +1,4 @@
+//Basic dfs on grid
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -16,9 +17,9 @@ bool isvalid(int x,int y)
        return false;  
       return true; 
 }
-void dfs(int x,int y)
+void dfs(int x,int y) // dfs on grid function
 {
-    visited[x][y]=true;
+    visited[x][y]=true; // totaly ridiculus, can use 2 array of possible x and y direction moves
     cout<<x<<" "<<y<<endl;
     if(isvalid(x-1,y))
       dfs(x-1,y);
