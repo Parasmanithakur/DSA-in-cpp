@@ -1,3 +1,5 @@
+//spoJ Question
+//prime path
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -6,7 +8,7 @@
 #include <algorithm>
 using namespace std;
 typedef long long ll;
-void fillPrimes(vector<int> &prime, int high)
+void fillPrimes(vector<int> &prime, int high) //using segment seive
 {
     bool ck[high + 1];
     memset(ck, true, sizeof(ck));
@@ -74,7 +76,7 @@ vector<int> segmentedSieve(int low, int high)
 vector<int> adj[100001];
 vector<int> prime4 = segmentedSieve(999, 9999);
 
-bool isValid(int x, int y)
+bool isValid(int x, int y) //two prime number are connected if only one digit se diff
 {
     int flag = 0;
     while (x > 0)
@@ -96,7 +98,7 @@ void addEgde(int u, int v)
     adj[u].push_back(v);
     adj[v].push_back(u);
 }
-void buildGraph()
+void buildGraph() // connecting the prime numbers acc to question
 {
     for (int i = 0; i < prime4.size(); i++)
     {
@@ -113,7 +115,7 @@ void buildGraph()
 
 bool vist[10001];
 int dist[10001] = {0};
-void bfs(int node)
+void bfs(int node) //basic bfs
 {
 
     vist[node] = 1;
